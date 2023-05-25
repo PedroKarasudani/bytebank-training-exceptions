@@ -3,7 +3,11 @@ public class TesteMetodoSaca {
         ContaCorrente conta = new ContaCorrente(123,321);
         
         conta.deposita(200);
-        conta.saca(200);
+        try {
+            conta.saca(200);
+        } catch (Exception ex) {
+            System.out.println("EX: " + ex.getMessage());
+        }
         System.out.println(conta.getSaldo());
         }
     }
