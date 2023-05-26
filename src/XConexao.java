@@ -1,16 +1,19 @@
-public class XConexao {
+
+public class XConexao implements AutoCloseable{
     
     public XConexao(){
         System.out.println("Abrindo conexão");
+        throw new IllegalStateException();
     }
 
-    public void leDados(){
+    public void leDados() {
         System.out.println("Recebendo Dados");
         throw new IllegalStateException();
     }
 
-    public void fecha(){
-        System.out.println("Fechando Conexão");
+    @Override
+    public void close() {
+      System.out.println("Fecha Dados!!");
     }
 
 }
